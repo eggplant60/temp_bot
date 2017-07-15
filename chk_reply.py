@@ -63,8 +63,8 @@ if __name__ == "__main__":
                 my_reply(api, status, "わかりません。")
                 print "解釈不能"
 
-        else:
-            break
+#        else:
+#            break
 
     # ユーザのフォローを取得
     # user = api.get_user('eggplant60')
