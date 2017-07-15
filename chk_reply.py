@@ -9,7 +9,7 @@ from tweet_temp import now_str
 
 ### Import the bot's information
 ### consumer_key, consumer_secret, access_token, access_token_secret
-from passward_bot import *
+from password_bot import *
 
 
 ### Air Conditioner Command
