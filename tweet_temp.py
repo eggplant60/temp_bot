@@ -4,6 +4,7 @@
 import tweepy
 from datetime import datetime
 import am2320
+import time
 
 ### Import the bot's information
 ### consumer_key, consumer_secret, access_token, access_token_secret
@@ -24,10 +25,19 @@ if __name__ == "__main__":
 
     # tweet temparature and humidity
     am_obj = am2320.Thermo()
-    tmp = am_obj.getTmp()
-    hum = am_obj.getHum()
+    time.sleep(1)
+
+    for i in range(3):  # try third times
+        tmp = am_obj.getTmp()
+        hum = am_obj.getHum()
+        if  tmp == 0.0 and hum == 0.0:
+            time.sleep(1)
+        else:
+            break
+
     body = 'ただいまの室温: ' + str(tmp) \
            + '度、湿度:' + str(hum) + '%' + now_str()
+        
     print body
     api.update_status(body)
 
