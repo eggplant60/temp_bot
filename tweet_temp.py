@@ -31,7 +31,7 @@ if __name__ == "__main__":
         tmp = am_obj.getTmp()
         hum = am_obj.getHum()
         if  tmp == 0.0 and hum == 0.0:
-            time.sleep(1)
+            time.sleep(am2320.READ_INT)
         else:
             break
 
